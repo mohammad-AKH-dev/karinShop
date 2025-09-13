@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: Dana-Regular;
+  src: url(../public/fonts/Dana/DanaFaNum-Regular.woff2) format(woff2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: Dana-Medium;
+  src: url(../public/fonts/Dana/DanaFaNum-Medium.woff2) format(woff2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: Dana-semibold;
+  src: url(../public/fonts/Dana/DanaFaNum-DemiBold.woff2) format(woff2);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: Morabba;
+  src: url(../public/fonts/Morabba/Morabba-Medium.woff2) format(woff2);
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-primary-dark: rgba(17, 24, 39, 1);
+  --color-secondary-dark: rgba(31, 41, 55, 1);
+  --color-primary: #f9fafb;
+  --color-secondary: rgba(17, 24, 39, 1);
+  --color-text-primary: rgba(24, 24, 27, 1);
+  --color-text-secondary: rgba(156, 163, 175, 1);
+  --color-text-subtitle: rgba(107, 114, 128, 1);
+  --color-text-dark: rgba(244, 244, 245, 1);
+  --color-primary-blue: rgba(37, 99, 235, 1);
+  --color-secondary-blue: rgba(59, 130, 246, 1);
+  --color-text-blue: rgba(96, 165, 250, 1);
+  --color-slider-blue: rgba(29, 78, 216, 1);
+  --color-bg-icon: rgba(3, 7, 18, 1);
+  --font-primary: "Dana-Regular";
+  --font-medium: "Dana-Medium";
+  --font-semibold: "Dana-semibold";
+  --font-Morabba: "Morabba";
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1440px;
 }
