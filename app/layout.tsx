@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "./components/modules/Header/Header";
+import Footer from "./components/modules/footer/Footer";
+import Providers from "./providers/Providers";
 
 export const metadata: Metadata = {
   title: "قالب فروشگاهی کارین",
@@ -12,11 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className="font-primary dark:bg-primary-dark dark:text-text-dark"
-      >
-        {children}
+    <html dir="rtl" lang="en" className="text-[16px] dark" data-scroll-behavior="smooth">
+      <body className="font-primary text-[1rem] bg-primary text-text-primary dark:bg-primary-dark dark:text-text-dark">
+        <Providers>
+          <Header />
+          <div>{children}</div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

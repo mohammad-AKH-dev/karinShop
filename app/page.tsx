@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import {Database} from './appwrite'
+import {dataBaseId} from './utils/utils'
 
 export default function Home() {
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-       <h1 className="font-Morabba text-[24px]">کارین شاپ</h1>
-       <h4 className="font-primary text-[22px]">محصولات</h4>
+    <div className="main-page">
+       
     </div>
   );
 }

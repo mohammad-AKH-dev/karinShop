@@ -20,7 +20,8 @@
   src: url(../public/fonts/Morabba/Morabba-Medium.woff2) format(woff2);
 }
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-primary-dark: rgba(17, 24, 39, 1);
@@ -40,9 +41,11 @@
   --font-medium: "Dana-Medium";
   --font-semibold: "Dana-semibold";
   --font-Morabba: "Morabba";
-  --breakpoint-sm: 480px;
+  --breakpoint-2xs: 360px;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1200px;
-  --breakpoint-2xl: 1440px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
