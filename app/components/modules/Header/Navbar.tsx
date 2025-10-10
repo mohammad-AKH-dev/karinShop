@@ -1,47 +1,35 @@
 "use client";
 
-import { Database } from "@/app/appwrite";
-import { dataBaseId } from "@/app/utils/utils";
-import { useQuery } from "@tanstack/react-query";
 import { Models } from "appwrite";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Link from "next/link";
 import MegaMenu from "../../templates/Navbar/MegaMenu";
-import { pageType, pathsType } from "@/app/types";
+import { pageType, } from "@/app/types";
 import LocationPinIcon from "@mui/icons-material/LocationPin";
 import SearchIcon from "@mui/icons-material/Search";
 import SearchModal from "../../templates/Navbar/SearchModal";
 
-const getPaths = async (): Promise<Models.DefaultDocument[]> => {
-  const res = (await Database.listDocuments(
-    dataBaseId,
-    "paths",
-    []
-  )) as Models.DocumentList<Models.DefaultDocument>;
-  return res.documents;
-};
 
-function Navbar() {
-  const { data, isPending, error } = useQuery<Models.DefaultDocument[], Error>({
-    queryKey: ["paths"],
-    queryFn: getPaths,
-  });
+
+
+function Navbar({paths}: {paths: Models.DefaultDocument[]}) {
+
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const searchModalRef = useRef<HTMLDivElement>(null);
 
   const showMegaMenu = () => {
     if (megaMenuRef.current) {
       megaMenuRef.current.className =
-        "mega-menu w-[850px] h-[384px] top-[3rem] -right-[5rem] xl:right-0 bg-gray-800 backdrop-blur-2xl absolute visible opacity-95 z-10 rounded-xl p-4 transition-all flex  gap-x-6";
+        "mega-menu w-[850px] h-[384px] top-[3rem] -right-[5rem] xl:right-0 bg-gray-800 duration-400 backdrop-blur-2xl absolute visible opacity-100 z-10 rounded-xl p-4 transition-all flex  gap-x-6";
     }
   };
 
   const hideMegaMenu = () => {
     if (megaMenuRef.current) {
       megaMenuRef.current.className =
-        "mega-menu w-[850px] h-[384px] top-[4rem] -right-[5rem] xl:right-0 bg-gray-800 absolute invisible opacity-0 -z-10 rounded-xl p-4 transition-all flex  gap-x-6";
+        "mega-menu w-[850px] h-[384px] top-[4rem] -right-[5rem] xl:right-0 bg-gray-800 duration-400 absolute invisible opacity-0 -z-10 rounded-xl p-4 transition-all flex  gap-x-6";
     }
   };
 
@@ -59,7 +47,6 @@ function Navbar() {
     }
   };
 
-  useEffect(() => {}, [isPending]);
   return (
     <nav className="navbar-section">
       <div
@@ -74,8 +61,8 @@ function Navbar() {
         >
           {/* right-section */}
           <ul className="flex items-center justify-start gap-x-10">
-            {!isPending ? (
-              data?.map((path) => (
+            {
+              paths.length && paths?.map((path: any) => (
                 <li key={path.$id} className="path-item transition-all">
                   {path.href &&
                   !path.categories.length &&
@@ -159,9 +146,7 @@ function Navbar() {
                   )}
                 </li>
               ))
-            ) : (
-              <span>Loading...</span>
-            )}
+            }
           </ul>
           {/* left-section */}
           <div className="navbar-content__left-section flex items-center gap-x-2">

@@ -22,7 +22,7 @@ const MegaMenu = forwardRef(
 
     return (
       <div
-        className="mega-menu w-[850px] h-[384px] top-[3rem] -right-[5rem] xl:right-0 bg-gray-800 absolute visible opacity-100 z-10 rounded-xl p-4 transition-all flex duration-400 gap-x-6"
+        className="mega-menu w-[850px] h-[384px] top-[4rem] -right-[5rem] xl:right-0 bg-gray-800 absolute visible opacity-0 -z-[10] rounded-xl p-4 transition-all flex duration-400 gap-x-6"
         onMouseLeave={() => {
           onClose();
           setActiveTab(selectedTab[0]);
@@ -57,12 +57,6 @@ const MegaMenu = forwardRef(
               <ChevronLeftIcon />
             </Link>
           )}
-          {/* titles */}
-          {/* <div className="mega-menu__left-selected-tab__titles flex items-center justify-start gap-x-10 font-semibold p-4">
-            {activeTab?.titles?.map((title) => (
-              <h5>{title}</h5>
-            ))}
-          </div> */}
           <div className="mega-menu__left-paths grid grid-cols-3 mt-4">
             {/* brands */}
             {activeTab.brands && (
