@@ -33,6 +33,7 @@ const MegaMenu = forwardRef(
           <ul className="mega-menu__right-list w-full h-full flex items-start p-4 rounded-xl bg-primary-dark flex-col gap-y-2">
             {categories.map((category) => (
               <li
+                key={category.name}
                 onMouseEnter={() => setActiveMenu(category)}
                 className={`mega-menu__list-item w-full transition-all hover:bg-primary-blue p-2 rounded-md ${
                   category.name === activeTab.name && "bg-primary-blue"
@@ -68,8 +69,8 @@ const MegaMenu = forwardRef(
                 
                 {activeTab.brands?.length && (
                   <ul className="active-tab__brands-list mt-4 flex items-start flex-col gap-y-3">
-                    {activeTab.brands?.map((brand) => (
-                      <li className="brand-item text-[#9ca3af] whitespace-nowrap text-ellipsis line-clamp-1 max-w-[155px]">
+                    {activeTab.brands?.map((brand,index) => (
+                      <li key={index} className="brand-item text-[#9ca3af] whitespace-nowrap text-ellipsis line-clamp-1 max-w-[155px]">
                         {brand}
                       </li>
                     ))}
@@ -87,8 +88,8 @@ const MegaMenu = forwardRef(
                 
                 {activeTab.prices?.length && (
                   <ul className="active-tab__prices-list mt-4 flex items-start flex-col gap-y-3">
-                    {activeTab.prices?.map((price) => (
-                      <li className="price-item text-[#9ca3af] whitespace-nowrap text-ellipsis line-clamp-1 max-w-[155px]">
+                    {activeTab.prices?.map((price,index) => (
+                      <li key={index} className="price-item text-[#9ca3af] whitespace-nowrap text-ellipsis line-clamp-1 max-w-[155px]">
                         {price}
                       </li>
                     ))}
@@ -105,8 +106,8 @@ const MegaMenu = forwardRef(
 
                 {activeTab.accessories?.length && (
                   <ul className="active-tab__accessories-list mt-4 flex items-start flex-col gap-y-3">
-                    {activeTab.accessories?.map((accessory) => (
-                      <li className="accessory-item text-[#9ca3af] whitespace-nowrap text-ellipsis line-clamp-1 max-w-[155px]">
+                    {activeTab.accessories?.map((accessory,index) => (
+                      <li key={index} className="accessory-item text-[#9ca3af] whitespace-nowrap text-ellipsis line-clamp-1 max-w-[155px]">
                         {accessory}
                       </li>
                     ))}
