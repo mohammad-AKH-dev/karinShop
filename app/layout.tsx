@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html dir="rtl" lang="en" className="text-[16px] dark" data-scroll-behavior="smooth">
+    <html dir="rtl" lang="en" className="text-[16px] dark mdl-js" data-scroll-behavior="smooth">
       <body className="font-primary text-[1rem] bg-primary text-text-primary dark:bg-primary-dark dark:text-text-dark">
         <Providers>
           <Header />

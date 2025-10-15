@@ -43,6 +43,7 @@ function HeaderSlider() {
               src={image}
               width={4000}
               height={2000}
+              unoptimized
               alt={image}
             />
           </SwiperSlide>
