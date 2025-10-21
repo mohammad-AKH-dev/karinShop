@@ -6,30 +6,26 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Link from "next/link";
 import MegaMenu from "../../templates/Navbar/MegaMenu";
-import { pageType, } from "@/app/types";
+import { pageType } from "@/app/types";
 import LocationPinIcon from "@mui/icons-material/LocationPin";
 import SearchIcon from "@mui/icons-material/Search";
 import SearchModal from "../../templates/Navbar/SearchModal";
 
-
-
-
-function Navbar({paths}: {paths: Models.DefaultDocument[]}) {
-
+function Navbar({ paths }: { paths: Models.DefaultDocument[] }) {
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const searchModalRef = useRef<HTMLDivElement>(null);
 
   const showMegaMenu = () => {
     if (megaMenuRef.current) {
       megaMenuRef.current.className =
-        "mega-menu w-[850px] h-[384px] top-[3rem] -right-[5rem] xl:right-0 bg-gray-800 duration-400 backdrop-blur-2xl absolute visible opacity-100 z-10 rounded-xl p-4 transition-all flex  gap-x-6";
+        "mega-menu w-[850px] h-[384px] top-[3rem] -right-[5rem] xl:right-0 bg-gray-800 duration-500 backdrop-blur-2xl absolute visible opacity-100 z-10 rounded-xl p-4 transition-all flex  gap-x-6";
     }
   };
 
   const hideMegaMenu = () => {
     if (megaMenuRef.current) {
       megaMenuRef.current.className =
-        "mega-menu w-[850px] h-[384px] top-[4rem] -right-[5rem] xl:right-0 bg-gray-800 duration-400 absolute invisible opacity-0 -z-10 rounded-xl p-4 transition-all flex  gap-x-6";
+        "mega-menu w-[850px] h-[384px] top-[4rem] -right-[5rem] xl:right-0 bg-gray-800 duration-500 absolute invisible opacity-0 -z-10 rounded-xl p-4 transition-all flex  gap-x-6";
     }
   };
 
@@ -52,7 +48,7 @@ function Navbar({paths}: {paths: Models.DefaultDocument[]}) {
       <div
         className="navbar-content lg:container mx-auto 
        flex justify-between items-center py-3 px-[1rem]
-       lg:pt-6 md:px-[.5rem] xl:px-[6rem]"
+       lg:pt-6 md:px-[.5rem] lg:px-[3rem] xl:px-[2rem]"
       >
         {/* navbar menu */}
         <div
@@ -61,9 +57,13 @@ function Navbar({paths}: {paths: Models.DefaultDocument[]}) {
         >
           {/* right-section */}
           <ul className="flex items-center justify-start gap-x-10">
-            {
-              paths.length && paths?.map((path: any) => (
-                <li key={path.$id} className="path-item transition-all">
+            {paths.length &&
+              paths?.map((path: any) => (
+                <li
+                  key={path.$id}
+                  className="path-item transition-all after:w-0 after:transition-all after:h-[1px] after:absolute relative hover:after:w-full
+                   after:bg-primary-blue after:left-[50%] hover:after:left-0 after:-bottom-1 after:duration-300"
+                >
                   {path.href &&
                   !path.categories.length &&
                   !path.pages.length ? (
@@ -145,8 +145,7 @@ function Navbar({paths}: {paths: Models.DefaultDocument[]}) {
                     </span>
                   )}
                 </li>
-              ))
-            }
+              ))}
           </ul>
           {/* left-section */}
           <div className="navbar-content__left-section flex items-center gap-x-2">

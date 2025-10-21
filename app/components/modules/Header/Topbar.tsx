@@ -10,7 +10,7 @@ function Topbar() {
 
   return (
     <div className="topbar-section bg-gray-800 lg:bg-transparent w-full">
-      <div className="topbar lg:container mx-auto  flex justify-between items-center py-3 px-[1rem] lg:pt-6 lg:px-[.5rem] xl:px-[6rem]">
+      <div className="topbar lg:container mx-auto  flex justify-between items-center py-3 px-[1rem] lg:pt-6 md:px-[.5rem] lg:px-[3rem] xl:px-[2rem]">
         {/* right section */}
         <div className="topbar-right__section">
           <div className="search-input__wrapper hidden lg:flex flex-row-reverse bg-[#374151] p-[.4rem] w-84 rounded-full justify-end gap-x-[.5rem]">
