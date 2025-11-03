@@ -10,8 +10,6 @@ async function Header() {
   const res = await Database.listDocuments(dataBaseId,'paths',[])
   const paths: Models.DefaultDocument[] = res.documents
 
-  console.log(paths)
-
   return (
     <header className='header'>
        <Topbar/>

@@ -49,3 +49,23 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 }
+
+.rc-tooltip-arrow {
+  left: 3.7rem !important;
+  top: -.9rem  !important;
+  border-top-color: #60a5fa !important;
+} 
+
+.rc-tooltip-content {
+  margin-top: -2.8rem !important;
+  
+}
+
+
+.rc-tooltip-inner {
+  background-color: #3b82f6 !important; 
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  border-radius: 12px !important;
+}
+

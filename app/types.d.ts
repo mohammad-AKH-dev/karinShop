@@ -36,3 +36,33 @@ export type pathType = {
 };
 
 export type pathsType = pathType[];
+
+// popular categories types
+
+export type popuarCategoryType = {
+  id: string
+  title: string
+  img: string
+}
+
+export type popularCategoriesType = popuarCategoryType[]
+
+// products types 
+
+export type productType = {
+  $id: string
+  $databaseId: string
+  $premissions: []
+  $sequence: number
+  brand: string
+  price: number
+  discount: number
+  isAvailableToday: boolean
+  score: number
+  image1: string
+  image2: string
+  $created_at: string
+  $updated_at: string
+}
+
+export type productsType = productType[]

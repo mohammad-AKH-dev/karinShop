@@ -16,7 +16,7 @@ const SearchModal = forwardRef(
     const [searchInput, setSearchInput] = useState("");
     return (
       <div
-        className="search-modal block lg:hidden w-full h-full fixed -top-[50rem] z-[999] bg-[#111827f2] p-4 delay-100
+        className="search-modal block lg:hidden w-full h-full fixed -top-[300rem] z-[999] bg-[#111827f2] p-4 delay-100
         transition-all duration-400 opacity-95 backdrop-blur-2xl"
         ref={ref}
       >
