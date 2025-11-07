@@ -10,6 +10,7 @@ import Campagins from "./components/templates/Index/Campagins";
 import BestSellingProducts from "./components/templates/Index/BestSellingProducts";
 import PopularBrands from "./components/templates/Index/PopularBrands";
 import HottestProducts from "./components/templates/Index/HottestProducts";
+import PopularBlogs from "./components/templates/Index/PopularBlogs";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
        <BestSellingProducts/>
        <PopularBrands/>
        <HottestProducts/>
+       <PopularBlogs/>
     </div>
   );
 }
