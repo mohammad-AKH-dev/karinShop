@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import NavigationSectionTitle from "../../modules/NavigationSectionTitle/NavigationSectionTitle";
@@ -37,14 +37,35 @@ function PopularBlogs() {
           subtitle="جدیدترین و بروزترین مقالات"
           icon={<CheckCircleIcon />}
         />
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={4}>
-          {
-            data?.map(blog => (
-              <SwiperSlide key={blog.$id}>
-                  <BlogBox {...blog}/>
-              </SwiperSlide>
-            ))
-          }
+        <Swiper
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper mt-16 overflow-x-clip! overflow-visible!"
+          slidesPerView={1}
+          breakpoints={{
+            530: {
+              slidesPerView: 1.5
+            },
+            640: {
+              slidesPerView: 2
+            },
+            768: {
+              slidesPerView: 2.5
+            },
+            960: {
+              slidesPerView: 3
+            }, 
+            1100: {
+              slidesPerView: 4
+            }
+          }}
+          spaceBetween={30}
+        >
+          {data?.map((blog) => (
+            <SwiperSlide key={blog.$id}>
+              <BlogBox {...blog} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

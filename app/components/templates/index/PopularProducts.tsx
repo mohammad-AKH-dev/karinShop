@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import SectionTitle from "../../modules/SectionTitle/SectionTitle";
 import BorderAllIcon from "@mui/icons-material/BorderAll";
-import PopularProductBox from "./PopularProductBox";
 import { popularCategoriesType } from "@/app/types";
+import PopularProductBox from "./PopularProductBox";
 
 function PopularProducts() {
   const [popularCategories, setPopuarCategories] =
