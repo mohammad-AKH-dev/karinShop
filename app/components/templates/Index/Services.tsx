@@ -21,7 +21,7 @@ function Services() {
     <section className="services__section mt-15 xl:mt-20">
       <div className="services__content flex items-center justify-center sm:justify-between flex-wrap gap-x-8 gap-y-6 lg:gap-6">
         {services.map((service) => (
-          <div className="service-box flex flex-col items-center gap-y-1" key={service.id}>
+          <div className="service-box flex flex-col items-center gap-y-1 cursor-pointer" key={service.id}>
             <Image
               className="service-box__image w-[56px] h-[56px]"
               width={1500}
