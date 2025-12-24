@@ -19,7 +19,7 @@ function NavigationSectionTitle(props: SectionTitlePropsType) {
         <div className="icon-wrapper w-[48px] h-[48px] bg-[#1f2937] flex items-center justify-center rounded-xl">
           {icon}
         </div>
-        <div className="navigation-section-title__wrapper text-[1.5rem] font-Morabba line-clamp-1">
+        <div className="navigation-section-title__wrapper text-[1.5rem] font-Morabba sm:line-clamp-1 md:line-clamp-none">
           <h4 className="navigation-section-title">
             {title}
             <span className="navigation-section-blue__title text-primary-blue">
@@ -27,7 +27,7 @@ function NavigationSectionTitle(props: SectionTitlePropsType) {
               {blueTitle}
             </span>
           </h4>
-          <p className="navigation-section-sub__title text-sm tracking-widest font-medium line-clamp-1">
+          <p className="navigation-section-sub__title text-sm tracking-widest font-medium sm:line-clamp-1 md:line-clamp-none">
             {subtitle}
           </p>
         </div>
