@@ -19,9 +19,9 @@ function page() {
         <div className="shop-page__right-section flex gap-x-5 w-full">
           {/* filtering */}
           <FilteringSection/>
+          {/* products */}
           <ShopItems/>
         </div>
-        <div className="shop-page__left-section w-[70%]"></div>
       </section>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
@@ -13,7 +13,9 @@ function FilteringSection() {
   const [prices, setPrices] = useState<[number, number]>([40000, 300000]);
 
   return (
-    <div className="filtering-section w-[30%] rounded-md dark:bg-gray-800 bg-white shadow px-4 py-3">
+    <>
+    {/* +1200px filtering section */}
+    <div className="filtering-section w-[30%] hidden xl:block max-h-[475px] sticky top-5 rounded-md dark:bg-gray-800 bg-white shadow px-4 py-3">
       <div className="filtering-section__title flex items-center justify-between">
         <h4 className="font-medium text-gray-700 dark:text-gray-200 text-lg">
           فیلترها
@@ -321,6 +323,11 @@ function FilteringSection() {
         </label>
       </div>
     </div>
+    {/* -1200px filtering section */}
+    <div className="mobile-filtering-section">
+       
+    </div>
+    </>
   );
 }
 

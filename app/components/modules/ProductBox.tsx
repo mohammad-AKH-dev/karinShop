@@ -48,7 +48,7 @@ function ProductBox(props: productType | Models.DefaultDocument) {
           </div>
         </div>
       </div>
-      <div className="product-box__image overflow-hidden group">
+      <div className="product-box__image overflow-hidden group relative">
         <Image
           width={2000}
           height={2000}
@@ -61,7 +61,7 @@ function ProductBox(props: productType | Models.DefaultDocument) {
           height={2000}
           src={image2}
           alt={brand}
-          className="group-hover:opacity-100 group-hover:visible group-hover:z-10 transition-all opacity-0 invisible absolute z-50 max-w-[240px] mx-auto top-[3rem] inset-0"
+          className="group-hover:opacity-100 group-hover:visible group-hover:z-10 transition-all opacity-0 invisible absolute z-50 max-w-[240px] mx-auto inset-0"
         />
       </div>
       <p className="product-box__brand line-clamp-2 text-ellipsis">{brand}</p>

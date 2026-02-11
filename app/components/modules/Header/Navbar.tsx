@@ -18,7 +18,7 @@ function Navbar({ paths }: { paths: Models.DefaultDocument[] }) {
   const showMegaMenu = () => {
     if (megaMenuRef.current) {
       megaMenuRef.current.className =
-        "mega-menu w-[850px] h-[384px] top-[3rem] -right-[5rem] xl:right-0 bg-gray-800 duration-500 backdrop-blur-2xl absolute visible opacity-100 z-10 rounded-xl p-4 transition-all flex  gap-x-6";
+        "mega-menu w-[850px] h-[384px] top-[3rem] -right-[5rem] xl:right-0 bg-gray-800 duration-500 backdrop-blur-2xl absolute visible opacity-100 z-[9999] rounded-xl p-4 transition-all flex  gap-x-6";
     }
   };
 

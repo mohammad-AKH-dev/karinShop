@@ -15,6 +15,7 @@ import { Models } from "appwrite";
 import { useQuery } from "@tanstack/react-query";
 import OfferBox from "../../modules/OfferBox";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ProductsLoading from "../../modules/loaders/ProductsLoading";
 
 function AmazingOffers() {
   const getProducts = async () => {
@@ -118,7 +119,7 @@ function AmazingOffers() {
               </SwiperSlide>
             </>
           ) : (
-            <span>Loading...</span>
+            <ProductsLoading/>
           )}
         </Swiper>
       </div>

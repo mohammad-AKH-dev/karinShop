@@ -22,7 +22,7 @@ const MegaMenu = forwardRef(
 
     return (
       <div
-        className="mega-menu w-[850px] h-[384px] top-[4rem] -right-[5rem] xl:right-0 bg-gray-800 absolute visible opacity-0  rounded-xl p-4 transition-all flex duration-400 gap-x-6"
+        className="mega-menu w-[850px] h-[384px] top-[4rem] -right-[5rem] xl:right-0 bg-gray-800 absolute visible opacity-0 z-[9999999]  rounded-xl p-4 transition-all flex duration-400 gap-x-6"
         onMouseLeave={() => {
           onClose();
           setActiveTab(selectedTab[0]);

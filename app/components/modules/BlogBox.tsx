@@ -17,7 +17,7 @@ function BlogBox(props: BlogBoxPropsType | Models.DefaultDocument) {
   const { image, title, date, views } = props;
 
   return (
-    <div className="blog-box p-2 bg-[rgb(31,44,55)] max-w-[286px]  group rounded-lg cursor-pointer hover:-translate-y-4 duration-300 transition-all">
+    <div className="blog-box p-2 bg-[rgb(31,44,55)] max-w-[286px] group rounded-lg cursor-pointer hover:-translate-y-4 duration-300 transition-all">
       <div className="blog-box__image-wrapper relative w-full">
         <Image
           width={2000}

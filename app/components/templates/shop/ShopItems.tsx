@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import SortIcon from "@mui/icons-material/Sort";
+import ShopProducts from "./ShopProducts";
 
 type categoryType = {
   id: number;
@@ -68,6 +69,7 @@ function ShopItems() {
       </section>
       {/* محصولات */}
       <section className="products-section">
+         <ShopProducts/>
          
       </section>
     </div>
